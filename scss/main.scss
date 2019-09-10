@@ -1,29 +1,47 @@
+html {
+
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: white;
     height: 100%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
 .title-container {
+    background-image: url(/img/lewis.jpg);
+    background-size: cover;
+    background-position-y: 54%;
+    background-position-x: 50%;
     display: flex;
     justify-content: center;
-    padding: 4rem;
+    padding: 5rem;
     h1 {
         text-align: center;
         font-size: 3rem;
+        padding: 0 2rem;
     }
     .helmet {
         height: 100px;
         width: 100px;
-        margin-right: 4rem;
+        // margin-right: 4rem;
         &.flipped {
             transform: scaleX(-1);
-            margin-left: 4rem;
+            // margin-right: 4rem;
         }
     }
+}
+
+.bg-container {
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4rem;
+    border-radius: 5px;
 }
 
 table {
@@ -32,10 +50,15 @@ table {
     border-collapse: collapse;
     width: 100%;
     text-align: center;
+    table-layout: auto;
 }
 
 td {
     padding: 1rem 0;
+}
+
+tr {
+    min-height: 80px;
 }
 
 tbody tr:first-of-type {
@@ -46,12 +69,11 @@ th:nth-child(odd) {
     background-color: mintcream;
 }
 
-th{
+th {
     height: 120px;
-    white-space: nowrap;
+    max-width: 200px;
     letter-spacing: 0.1rem;
-    padding: 0 0.2rem;
-    word-break: break;
+    padding: 0 0.3rem;
 }
 
 th, td {

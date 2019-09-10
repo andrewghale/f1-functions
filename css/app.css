@@ -3,32 +3,47 @@ body {
   padding: 0;
   background-color: white;
   height: 100%;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
 .title-container {
+  background-image: url(/img/lewis.jpg);
+  background-size: cover;
+  background-position-y: 54%;
+  background-position-x: 50%;
   display: flex;
   justify-content: center;
-  padding: 4rem; }
+  padding: 5rem; }
   .title-container h1 {
     text-align: center;
-    font-size: 3rem; }
+    font-size: 3rem;
+    padding: 0 2rem; }
   .title-container .helmet {
     height: 100px;
-    width: 100px;
-    margin-right: 4rem; }
+    width: 100px; }
     .title-container .helmet.flipped {
-      transform: scaleX(-1);
-      margin-left: 4rem; }
+      transform: scaleX(-1); }
+
+.bg-container {
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4rem;
+  border-radius: 5px; }
 
 table {
   margin: 0;
   padding: 0;
   border-collapse: collapse;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  table-layout: auto; }
 
 td {
   padding: 1rem 0; }
+
+tr {
+  min-height: 80px; }
 
 tbody tr:first-of-type {
   background: #f3d8d8; }
@@ -38,10 +53,9 @@ th:nth-child(odd) {
 
 th {
   height: 120px;
-  white-space: nowrap;
+  max-width: 200px;
   letter-spacing: 0.1rem;
-  padding: 0 0.2rem;
-  word-break: break; }
+  padding: 0 0.3rem; }
 
 th, td {
   border-bottom: 1px solid lightsteelblue; }
