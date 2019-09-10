@@ -1,5 +1,5 @@
 {
-  "name": "formula-1",
+  "name": "f1-champs",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "gulp": "^4.0.2",
-    "prismjs": "^1.17.1"
+    "gulp": "^4.0.2"
   },
   "devDependencies": {
     "commander": "^2.20.0",
@@ -20,8 +19,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
-    "gulp-uglify-es": "^1.0.4",
-    "opentype.js": "^0.11.0"
+    "gulp-uglify-es": "^1.0.4"
   },
   "author": "",
   "license": "ISC"
