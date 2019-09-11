@@ -1,5 +1,9 @@
-html {
+* {
+    box-sizing: border-box;
+}
 
+html {
+    height: 100%;
 }
 
 body {
@@ -12,7 +16,7 @@ body {
 
 
 .title-container {
-    background-image: url(/img/lewis.jpg);
+    background-image: url(/img/lewis-grayscale.jpeg);
     background-size: cover;
     background-position-y: 54%;
     background-position-x: 50%;
@@ -27,10 +31,8 @@ body {
     .helmet {
         height: 100px;
         width: 100px;
-        // margin-right: 4rem;
         &.flipped {
             transform: scaleX(-1);
-            // margin-right: 4rem;
         }
     }
 }
@@ -44,6 +46,10 @@ body {
     border-radius: 5px;
 }
 
+.intro {
+    padding: 2rem;
+}
+
 table {
     margin: 0;
     padding: 0;
@@ -51,32 +57,38 @@ table {
     width: 100%;
     text-align: center;
     table-layout: auto;
+    tr {
+        min-height: 80px;
+        th {
+            height: 120px;
+            max-width: 200px;
+            letter-spacing: 0.1rem;
+            padding: 0 0.3rem;
+            cursor: pointer;
+            &:nth-child(odd) {
+                background-color: rgb(35, 35, 35);
+                color: white;
+            }
+        }
+        td {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(35, 35, 35, 0.2);
+            &:nth-child(odd) {
+                background-color: rgba(25, 25, 25, 0.1);
+            }
+        }
+        &:first-of-type {
+            background: rgb(240, 240, 240);
+        }
+        &:not(:first-child) {
+            td:nth-child(2) {
+                padding: 0 0.5rem;
+            }
+            td:nth-child(14) {
+                padding: 0 1rem;
+            }
+        }
+    }
 }
 
-td {
-    padding: 1rem 0;
-}
-
-tr {
-    min-height: 80px;
-}
-
-tbody tr:first-of-type {
-    background: rgb(243, 216, 216);
-}
-
-th:nth-child(odd) {
-    background-color: mintcream;
-}
-
-th {
-    height: 120px;
-    max-width: 200px;
-    letter-spacing: 0.1rem;
-    padding: 0 0.3rem;
-}
-
-th, td {
-    border-bottom: 1px solid lightsteelblue;
-}
 

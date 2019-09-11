@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  height: 100%; }
+
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +12,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
 .title-container {
-  background-image: url(/img/lewis.jpg);
+  background-image: url(/img/lewis-grayscale.jpeg);
   background-size: cover;
   background-position-y: 54%;
   background-position-x: 50%;
@@ -31,6 +37,9 @@ body {
   padding: 0 4rem;
   border-radius: 5px; }
 
+.intro {
+  padding: 2rem; }
+
 table {
   margin: 0;
   padding: 0;
@@ -38,26 +47,27 @@ table {
   width: 100%;
   text-align: center;
   table-layout: auto; }
-
-td {
-  padding: 1rem 0; }
-
-tr {
-  min-height: 80px; }
-
-tbody tr:first-of-type {
-  background: #f3d8d8; }
-
-th:nth-child(odd) {
-  background-color: mintcream; }
-
-th {
-  height: 120px;
-  max-width: 200px;
-  letter-spacing: 0.1rem;
-  padding: 0 0.3rem; }
-
-th, td {
-  border-bottom: 1px solid lightsteelblue; }
+  table tr {
+    min-height: 80px; }
+    table tr th {
+      height: 120px;
+      max-width: 200px;
+      letter-spacing: 0.1rem;
+      padding: 0 0.3rem;
+      cursor: pointer; }
+      table tr th:nth-child(odd) {
+        background-color: #232323;
+        color: white; }
+    table tr td {
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(35, 35, 35, 0.2); }
+      table tr td:nth-child(odd) {
+        background-color: rgba(25, 25, 25, 0.1); }
+    table tr:first-of-type {
+      background: #f0f0f0; }
+    table tr:not(:first-child) td:nth-child(2) {
+      padding: 0 0.5rem; }
+    table tr:not(:first-child) td:nth-child(14) {
+      padding: 0 1rem; }
 
 /*# sourceMappingURL=app.css.map */

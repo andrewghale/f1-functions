@@ -29,26 +29,36 @@ const titleCase = (str) => {
     return str.toLowerCase().split(' ').map(function(word) {
         return word.replace(word[0], word[0].toUpperCase());
     }).join(' ');
-}
+};
 
 //begin with opening table tag
-let html = `<table>`;
+// let html = `<table>`;
+
 //add on first table row tag
-html += `<tr class="headers">`;
+let headerClass = "headers";
+let html = `<tr class="${headerClass}">`;
+
+const makeClassName = (str) => {
+    str = str.replace(/\s+/g, '-');
+    return str;
+}
+
 //loop over to make table headers
+let x = 0;
 for ( let j in tableArr[0] ) {
     if (j === "fastestlaps" ) {
-        j = "fastest laps";
+        j = makeClassName("fastest laps");
     } else if (j === "pointsachievable") {
-        j = "points achievable towards championship (%)";
+        j = makeClassName("points achievable towards championship (%)");
     } else if (j === "pointsoutright") {
-        j = "points outright achievable (%)";
+        j = makeClassName("points outright achievable (%)");
     } else if (j === "margin") {
-        j = "points margin"
+        j = makeClassName("points margin")
     } else if (j === "marginpercent") {
-        j = "margin (%)";
+        j = makeClassName("margin (%)");
     }
-    html += `<th><div>${titleCase(j)}</div></th>`;
+    html += `<th class="${j}"onclick="sortTable(${x})"><div>${titleCase(j)}</div></th>`;
+    x++;
 }
 //close the table headers row
 html += `</tr>`;
@@ -61,5 +71,7 @@ for( let i = 0; i < tableArr.length; i++) {
     }
     html += `</tr>`;
 }
-html += `</table>`;
-document.getElementById('table-container').innerHTML = html;
+
+// html += `</table>`;
+
+document.getElementById('main-table').innerHTML = html;
