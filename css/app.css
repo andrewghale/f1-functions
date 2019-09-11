@@ -41,10 +41,10 @@ body {
   padding: 2rem; }
 
 table {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   border-collapse: collapse;
-  width: 100%;
+  width: 97%;
   text-align: center;
   table-layout: auto; }
   table tr {
