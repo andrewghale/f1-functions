@@ -72,20 +72,25 @@ document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() =
 // filter and map
 const twentiesFerrari = tableArr.filter(driver => driver.age < 30 && driver.engine == "Ferrari");
 const drivers = twentiesFerrari.map(driver => `${driver.season}: ${driver.driver}, ${driver.age} years old.`);
-// console.table(drivers);
-// outputs
+// console.log(drivers);
+// outputs:
+// 0: "1958: Mike Hawthorn, 29 years old."
+// 1: "1975: Niki Lauda, 26 years old."
+// 2: "1977: Niki Lauda, 28 years old."
+// 3: "1979: Jody Scheckter, 29 years old."
+// 4: "2007: Kimi Räikkönen, 28 years old."
 
 
 
 
 // driver ages oldest to youngest
-// const sortedAges = tableArr.sort((a, b) => a.age > b.age ? -1 : 1);
+const sortedAges = tableArr.sort((a, b) => a.age > b.age ? -1 : 1);
 
-const sortedAges = tableArr.sort(function(a, b) {
-    return b.age - a.age;
-});
+// const sortedAges = tableArr.sort(function(a, b) {
+//     return b.age - a.age;
+// });
 
-console.log(JSON.parse(JSON.stringify(sortedAges)));
+// console.log(JSON.parse(JSON.stringify(sortedAges)));
 // console.table(sortedAges);
 
 
@@ -93,9 +98,6 @@ console.log(JSON.parse(JSON.stringify(sortedAges)));
 // how many championships were decided at the Japanese Grand Prix?
 const inJapan = (tableArr.filter(({race}) => race === "Japanese Grand Prix")).length;
 // console.log(inJapan);
-
-
-
 
 
 // which drivers had a championship winning streak of 2 or more and when?
@@ -119,16 +121,18 @@ const reduced = sorted.reduce(function(obj, item) {
 
 
 
-// which drivers had a winning margin of 5% or less?
+// listed from most recent to oldest, which drivers had a winning margin of 5% or less?
 
 const fiveOrLess = tableArr.filter(({marginpercent}) => marginpercent <= 5);
+let info = [];
 for (let i = 0; i < fiveOrLess.length; i++) {
-    let info = `In ${fiveOrLess[i].season}, ${fiveOrLess[i].driver} won with a margin of ${fiveOrLess[i].marginpercent}%`;
-    // console.log(info);
+    let driverInfo = `${fiveOrLess[i].season}, ${fiveOrLess[i].driver}, ${fiveOrLess[i].marginpercent}%`;
+    info.push(driverInfo);
 }
+console.table(info.reverse());
 
 
-// has a team only won the championship once?
+// which teams have only won the championship once?
 
 const teamWins = tableArr.reduce(function(obj, item) {
     // creates object if it doesn't exist
@@ -138,15 +142,17 @@ const teamWins = tableArr.reduce(function(obj, item) {
     obj[item.team]++;
     return obj;
 }, []);
-const newDataKeys = Object.keys(teamWins);
-const newDataValues = Object.values(teamWins);
+const DataKeys = Object.keys(teamWins);
+const DataValues = Object.values(teamWins);
 let onceWinners = '';
-for ( let i = 0; i < newDataValues.length; i++ ) {
-    if (newDataValues[i] === 1) {
-        onceWinners += `${newDataKeys[i]} `;
+for ( let i = 0; i < DataValues.length; i++ ) {
+    if (DataValues[i] === 1) {
+        onceWinners += `${DataKeys[i]} `;
     }
 }
 // console.log(onceWinners);
+// outputs: BRM Matra Brawn
+
 
 // create an array that you can filer over and check for 1 (or whatever) championships
 // that looks like this below

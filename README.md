@@ -1,4 +1,4 @@
-# 🏎 F1 CHAMPS 🏎 #
+# 🏎 F1 FUNCTIONS 🏎 #
 
 This is a table containing data on all past F1 World Champions.
 
